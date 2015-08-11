@@ -1,0 +1,80 @@
+// Menu.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void main()
+{
+	float Area, base, altura, Promedio, a, b, A, B, C;
+	int opcion;
+	do{
+		cout<<" MENU "<<endl;
+		cout<<" -----------------"<<endl;
+		cout<<"1. Area del rectangulo"<<endl;
+		cout<<"2. Promedio de dos numeros"<<endl;
+		cout<<"3. Numero mayor"<<endl;
+		cout<<"0. Salir"<<endl;
+		cout<<"Opcion: ";
+		
+		cin>>opcion;
+		switch(opcion)
+		{
+		case 1:
+			cout<<"ingrese la base: ";
+			cin>> base;
+			cout<<"ingrese la altura: ";
+			cin>> altura;
+			Area = base * altura;
+			cout<<"Area :"<<Area;
+			break;
+
+		case 2:
+			cout<<" Ingrese a :";
+			cin>> a;
+			cout<<" ingrese b :";
+			cin>> b;
+			Promedio = (a + b)/2;
+			cout<<"Promedio :"<<Promedio;
+			break;
+
+		case 3:
+			cout<<" Ingrese A :";
+			cin>> A;
+			cout<<" Ingrese B :";
+			cin>> B;
+			cout<<" Ingrese C :";
+			cin>> C;
+			if (A>B)
+				if (A>C)
+					cout<<"El mayor es: "<<A;
+				else 
+					cout<<"El mayor es: "<<C;
+			else
+				if (B>C)
+					cout<<"El mayor es: "<<B;
+				else
+					cout<<"El mayor es: "<<C;
+			break;
+
+		case 0:
+			cout<<" salir :";
+			break;
+		default:
+			cout<<" Opcion Invalida :";
+			break;
+		}
+		getch();
+	    system("cls");
+	} while(opcion!=0);
+	
+}
+				
+				
+			
+
+
