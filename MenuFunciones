@@ -1,0 +1,86 @@
+// Menufunciones.cpp : Defines the entry point for the console application.
+// Autor: Jose Julian Gutierrez Pereira
+// Fecha: 25/08/2015
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void areadeuncirculo (float r, float &a);
+void cuadratica (float a, float b, float c, float &x1, float &x2);
+float a, b, c, r, x1, x2;
+
+void main()
+{
+	
+	int op;
+	do
+	{
+		cout<<"-----MENU-----";
+		cout<<"1.Area del circulo";
+		cout<<"2.Ecuacion cuadratica";
+		cout<<"3.Salir";
+
+		cout<<"ingrese la opcion: ";
+		cin>>op;
+
+		switch(op)
+		{
+		case 1:
+			cout<<"ingrese r";
+			cin>>r;
+
+			areadeuncirculo(r,a);
+
+			cout<<" El valor del area del circulo es: "<<a;
+
+		case 2:
+			cout<<"ingrese el valor de a: ";
+			cin>>a;
+			cout<<"ingrese el valor de b: ";
+			cin>>b;
+			cout<<"ingrese el valor de c: ";
+			cin>>c;
+
+			cuadratica(a,b,c,x1,x2);
+
+			cout<<"El valor de x1 es: "<<x1;
+			cout<<"El valor de x2 es: "<<x2;
+			break;
+
+		case 0:
+			cout<<"salir";
+			break;
+
+		default:
+			cout<<"opcion invalida";
+		}
+		getch();
+		system("cls");
+
+	}while(op=!0);
+		getch();
+}
+
+void areadeuncirculo(float r, float &a)
+{	a = r*r*3.1416;
+}
+
+void cuadratica(float a, float b, float c, float &x1, float &x2)
+{
+	float k;
+	k=(b*b-4*a*c);
+	if(k>0)
+	{
+		x1=((-b +sqrt(k))/(2*a));
+		x2=((-b -sqrt(k))/(2*a));
+	}
+	else
+	{
+		cout<<"error";
+	}
+}
